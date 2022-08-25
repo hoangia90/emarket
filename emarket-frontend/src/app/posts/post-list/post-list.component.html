@@ -1,0 +1,47 @@
+<div class="row">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+    <div class="container-fluid justify-content-start">
+      <a class="navbar-brand" href="javascript:void(0)">News</a>
+
+      <button mat-button [matMenuTriggerFor]="newsMenu" style="color: white;">Category</button>
+
+      <mat-menu #newsMenu="matMenu">
+        <button mat-menu-item *ngFor="let cat of filteredList" (click)="onClickCategory(cat.id)"> {{cat.name}} </button>
+      </mat-menu>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <input class="form-control form-control-sm" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+        placeholder="Search.......">
+    </div>
+
+  </nav>
+
+  <app-carousel></app-carousel>
+
+  <br>
+
+  <!-- <div class="row"> -->
+
+    <!-- <div class="col-md-12">
+    <table class="bootstrap table-striped">
+      <tr>
+        <th>Category Name</th>
+      </tr>
+      <tr *ngFor="let cat of filteredList">
+        <td>
+          <a (click)="filterByCategory(cat.id)">{{ cat.name }}</a>
+        </td>
+      </tr>
+    </table>
+  </div> -->
+
+    <div style=" padding: 3px" class="col-lg-4" *ngFor="let postEl of posts | filter:searchText; let i = index">
+      <app-post [post]="postEl" [index]="i">
+      </app-post>
+
+    </div>
+  </div>
+<!-- </div> -->

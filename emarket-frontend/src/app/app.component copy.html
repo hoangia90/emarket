@@ -1,0 +1,112 @@
+<app-header (sidenavToggled)="sidenavToggledReceived()"></app-header>
+
+<mat-sidenav-container>
+
+    <mat-sidenav mode="side" [(opened)]="opened">
+        <button mat-button class="menu-button">
+            <span STYLE="font-size:16.0pt"> Crypto Store </span>
+            <mat-icon>store</mat-icon>
+        </button>
+    </mat-sidenav>
+
+    <!-- <app-sidebar></app-sidebar> -->
+
+    <mat-sidenav-content>
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-xs-12"> -->
+                <h3>I'm in the AppComponent!</h3>
+
+                <router-outlet></router-outlet>
+
+                <app-blog *ngIf="loadedFeature === 'blog'"></app-blog>
+                <!-- <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes> -->
+                <!-- <app-shopping-list *ngIf="loadedFeature === 'shopping-list'"></app-shopping-list> -->
+                <!-- <app-recipes></app-recipes> -->
+                <!-- <app-shopping-list></app-shopping-list> -->
+
+                <!-- <hr> -->
+                <!-- <ol>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                    </ol> -->
+
+                <!-- <hr> -->
+                <!-- <app-servers></app-servers> -->
+                <!-- <div app-servers></div> -->
+                <!-- <div class="app-servers"></div> -->
+                <!-- <span class="app-servers"></span> -->
+
+                <!-- <hr>
+                    <app-warning-alert></app-warning-alert>
+                    <app-success-alert></app-success-alert> -->
+
+                <!-- <hr>
+                    <label>Username</label>
+                    <input type="text" class="form-control" [(ngModel)]="username">
+                    <p>{{ username }}</p>
+                    <button class="btn btn-primary" 
+                    [disabled]="username === '' "
+                    (click)="username = '' ">Reset User</button> -->
+
+                <!-- <hr> -->
+                <!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button> -->
+                <!-- <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button> -->
+                <!-- <p *ngIf="showSecret">Serect Password = tuna</p> -->
+                <!-- <div *ngFor="let logItem of log; let i = index" -->
+                <!-- [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}" [ngClass]="{'white-text' : i >= 4}"> -->
+                <!-- {{logItem}} -->
+                <!-- </div> -->
+
+                <!-- </div> -->
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+<div class="container">
+    <footer class="fadeInUp col-md-12">
+        <!-- <a href="https://github.com/mehulk05/Blog-Book" class="button github"><svg xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+            </svg><span>Open Sourced on GitHub</span></a> -->
+
+
+
+        <!-- <a href="https://medium.com/@mehulkothari05/blogging-app-using-angular-9-and-firebase-98e36168d850" class="button btn-light medium">
+            <span><img class="img-circle" width="20" alt=""
+                    src="https://seeklogo.com/images/M/medium-logo-93CDCF6451-seeklogo.com.png">Read about this Project
+                On MEDIUM</span></a> -->
+
+
+        <!-- <div class="footer-icons">
+            <ul class="navbar-nav ">
+                <li class="nav-item inline-block">
+                    <a href="https://github.com/mehulk05" aria-label="Github" class="nav-link text-github"><i
+                            class="fa fa-github" style="font-size: 24px; color: black;"></i></a></li>
+                <li class="nav-item inline-block">
+                    <a href="https://medium.com/@mehulkothari05" aria-label="Medium" class="nav-link">
+
+                        <span><img class="img-circle medium-icon" width="24" alt=""
+                                src="https://seeklogo.com/images/M/medium-logo-93CDCF6451-seeklogo.com.png"></span></a>
+                </li>
+                <li class="nav-item inline-block"><a href="https://www.instagram.com/mehul_kothari05/" aria-label="Insagram" class="nav-link"><i class="fa fa-instagram"
+                            style="font-size: 24px; color: black;"></i></a>
+                </li>
+                <li class="nav-item inline-block"><a href="https://www.linkedin.com/in/mehul-kothari-765868126/" aria-label="LinkedIn" class="nav-link"><i class="fa fa-linkedin"
+                            style="font-size: 24px; color: black;"></i></a>
+                </li>
+            </ul>
+        </div> -->
+    </footer>
+</div>
+
+
+
+<!-- <app-copyright></app-copyright> -->

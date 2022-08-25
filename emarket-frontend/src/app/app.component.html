@@ -1,0 +1,139 @@
+<app-header (sidenavToggled)="sidenavToggledReceived()"></app-header>
+
+<mat-sidenav-container>
+
+    <mat-sidenav mode="side" [(opened)]="opened">
+
+        <h2 style="color: white;margin-bottom: 0px;">Store</h2>
+
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/products">
+            <!-- <mat-icon>store</mat-icon> -->
+            <i class="fs-4 bi-house"></i>
+            <span STYLE="font-size:14.0pt">
+                Crypto Store
+            </span>
+        </button>
+
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive=""
+            routerLink="">
+            <mat-icon>create</mat-icon>
+            <span STYLE="font-size:14.0pt">
+                Products
+            </span>
+        </button>
+
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/shopping-list">
+            <mat-icon matBadge={{productsCountInCart}} matBadgeColor="accent" matBadgeSize="large"
+                matBadgePosition="before">
+                shopping_cart
+                <!-- shopping_basket -->
+            </mat-icon>
+            <span STYLE="font-size:14.0pt">
+                Shopping Cart
+            </span>
+        </button>
+
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/orders">
+            <mat-icon>monetization_on</mat-icon>
+            <span STYLE="font-size:14.0pt">
+                Orders
+            </span>
+        </button>
+
+        <h2 style="color: white;margin-bottom: 0px;">Monitor</h2>
+
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/dashboard">
+            <i class="fs-4 bi-speedometer2"></i>
+            <span STYLE="font-size:14.0pt">
+                Dashboard
+            </span>
+        </button>
+        <br />
+
+        <h2 style="color: white;margin-bottom: 0px;">Authentication</h2>
+
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/authenticate">
+            <mat-icon>link</mat-icon>
+            <span STYLE="font-size:14.0pt">
+                Back-End Connect
+            </span>
+
+        </button>
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/servers">
+            <mat-icon>wb_cloudy</mat-icon>
+            <span STYLE="font-size:14.0pt">
+                Servers
+            </span>
+        </button>
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/userAuthenticate">
+            <img src="https://www.illicoveto.com/wp-content/uploads/Shiba-Inu-768x958.jpg" alt="hugenerd" width="32"
+                height="32" class="rounded-circle">
+            <span STYLE="font-size:14.0pt">
+                Partner Login
+            </span>
+
+        </button>
+
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/users">
+            <mat-icon>contacts</mat-icon>
+            <span STYLE="font-size:14.0pt">
+                Users
+            </span>
+        </button>
+
+        <h2 style="color: white;margin-bottom: 0px;">News</h2>
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/blog">
+            <mat-icon>info</mat-icon>
+            <span STYLE="font-size:14.0pt">
+                News
+            </span>
+        </button>
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/carousel">
+            <mat-icon>view_carousel</mat-icon>
+            <span STYLE="font-size:14.0pt">
+                Carousel
+            </span>
+        </button>
+
+        <h2 style="color: white;margin-bottom: 0px;">Sorting</h2>
+
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/categories">
+            <mat-icon>category</mat-icon>
+            <span STYLE="font-size:14.0pt">
+                Category
+            </span>
+        </button>
+
+        <button mat-button class="menu-button" style="text-align:left" routerLinkActive="activebutton"
+            routerLink="/tags">
+            <mat-icon>tag</mat-icon>
+            <span STYLE="font-size:14.0pt">
+                Tag
+            </span>
+        </button>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="container">
+            <div class="row">
+                <br>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<app-footer></app-footer>

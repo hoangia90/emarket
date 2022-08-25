@@ -1,0 +1,267 @@
+<!-- For testing purposes - Begin -->
+<!-- <app-shopping-edit></app-shopping-edit>
+
+<br>
+<button mat-raised-button (click)="isEditable = !isEditable">
+  {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+</button>
+<hr> -->
+<!-- For testing purposes - End -->
+
+<!-- <app-alert></app-alert> -->
+
+<div>
+  <mat-stepper #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Confirm your products</ng-template>
+
+
+        <hr>
+        <h2 style="color:darkcyan;">Shopping List</h2>
+        <!-- <p>The list</p>  -->
+        <!-- <ul class="list-group">
+            <a class="list-group-item" 
+            style="cursor: pointer;"
+            *ngFor="let category of categories; let i = index"
+            (click)="onEditItem(i)"
+            >
+            ({{category.id}}) {{category.name}}
+            </a>
+        </ul> -->
+        <!-- <hr> -->
+        <ul class="list-group list-group-numbered">
+          <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px;"
+            *ngFor="let service of cart; let i = index" (click)="onEditItem(i)">
+            {{service.productName}}
+            <!-- . Price: {{service.price}}(EUR) -->
+            <span class="float-end">
+              <!-- <button class="btn btn-success" type="button" float-right> Update </button> -->
+              <button class="btn btn-danger btn-sm float-end" type="button" float-right (click)="onDeleteCart(i)"
+                style="margin-top: 0;">
+                <!-- Delete -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-trash"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                  <path fill-rule="evenodd"
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                </svg>
+              </button>
+              <!-- <button class="btn btn-primary" > Clear </button> -->
+            </span>
+
+
+            <!-- <hr> -->
+
+            <!-- <span>
+              <h3 style="margin: 0px; color: cornflowerblue;">
+                Database selected: {{dbs.selectedOptions.selected[0]?.value}}
+              </h3>
+              <mat-selection-list #dbs [multiple]="false" (selectionChange)="onChange($event,i)">
+                <mat-list-option *ngFor="let db of databases" [value]="db">
+                  {{db}}
+                </mat-list-option>
+              </mat-selection-list>
+            </span> -->
+
+            <!-- <hr> -->
+
+            <!-- <span>
+              <h3 style="margin: 0px; color: cornflowerblue;">
+                File Input selected: {{fis.selectedOptions.selected[0]?.value}}
+              </h3>
+              <mat-selection-list #fis [multiple]="false" (selectionChange)="onChange3($event,i)">
+                <mat-list-option *ngFor="let fileInput of fileInputs" [value]="fileInput">
+                  {{fileInput}}
+                </mat-list-option>
+              </mat-selection-list>
+            </span> -->
+
+            <!-- <hr> -->
+
+            <!-- <span>
+              <h3 style="margin: 0px; color: cornflowerblue;">
+                Shipping Mode selected: {{sms.selectedOptions.selected[0]?.value}}
+              </h3>
+              <mat-selection-list #sms [multiple]="false" (selectionChange)="onChange2($event,i)">
+                <mat-list-option *ngFor="let shippingMode of shippingModes" [value]="shippingMode">
+                  {{shippingMode}}
+                </mat-list-option>
+              </mat-selection-list>
+            </span> -->
+          </li>
+        </ul>
+
+        <!-- <mat-form-field appearance="fill"> -->
+        <!-- <div class="col-xs-6 col-md-2">
+          <mat-label>ID</mat-label>
+          <input formControlName="firstCtrl" class="form-control" placeholder="ID" required>
+        </div> -->
+        <!-- </mat-form-field> -->
+        <br>
+        <div>
+          <button class="btn btn-success" matStepperNext [disabled]="!(this.cart.length !== 0)">Next</button>
+        </div>
+      </form>
+
+      <!-- <hr>
+      <app-shopping-edit></app-shopping-edit> -->
+
+    </mat-step>
+
+
+
+
+
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Encrypt data</ng-template>
+
+
+        <hr>
+        <h2 style="color:darkcyan;">Enter values to be encrypted</h2>
+        <!-- <p>The list</p>  -->
+        <!-- <ul class="list-group">
+            <a class="list-group-item" 
+            style="cursor: pointer;"
+            *ngFor="let category of categories; let i = index"
+            (click)="onEditItem(i)"
+            >
+            ({{category.id}}) {{category.name}}
+            </a>
+        </ul> -->
+        <!-- <hr> -->
+        <ul class="list-group list-group-numbered">
+          <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px;"
+            *ngFor="let service of cart; let i = index" (click)="onEditItem(i)">
+            {{service.productName}}
+            <!-- . Price: {{service.price}}(EUR) -->
+
+            <hr>
+
+            <app-encrypt-data [serviceId]="service.id" [productId]="service.productId">
+            </app-encrypt-data>
+
+            <br>
+
+          </li>
+        </ul>
+
+
+        <!-- <mat-form-field appearance="fill"> -->
+        <!-- <div class="col-xs-6 col-md-2">
+
+          <mat-label>Coefficient</mat-label>
+          <input formControlName="firstCtrl" class="form-control" placeholder="1000000" required>
+
+          <mat-label>Date time</mat-label>
+          <input formControlName="firstCtrl1" class="form-control" placeholder="02122022" required>
+
+          <mat-label>Value</mat-label>
+          <input formControlName="firstCtrl2" class="form-control" placeholder="60.06" required>
+
+        </div> -->
+        <!-- </mat-form-field> -->
+        <br>
+        <div>
+          <button class="btn btn-danger" matStepperPrevious>Back</button>
+          &nbsp;
+          <!-- <button class="btn btn-success" matStepperNext [disabled]="!isAllSubmitted || !(this.cart.length !== 0)">Next</button> -->
+          <button class="btn btn-success" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Send encrypted data to cloud for processing</ng-template>
+        <hr>
+        <h2 style="color:darkcyan;">Upload encrypted file</h2>
+        <ul class="list-group list-group-numbered">
+          <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px;"
+            *ngFor="let service of cart; let i = index" (click)="onEditItem(i)">
+            {{service.productName}}
+            <hr>
+            <app-send-data-to-cloud [serviceId]="service.id" [productId]="service.productId"></app-send-data-to-cloud>
+            <br>
+          </li>
+        </ul>
+        <br>
+        <div>
+          <button class="btn btn-danger" matStepperPrevious>Back</button>
+          &nbsp;
+          <button class="btn btn-success" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+
+
+
+    <mat-step [stepControl]="fourthFormGroup">
+      <form [formGroup]="fourthFormGroup">
+        <ng-template matStepLabel>Get result from cloud</ng-template>
+        <hr>
+        <h2 style="color:darkcyan;">Get result from cloud</h2>
+        <ul class="list-group list-group-numbered">
+          <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px;"
+            *ngFor="let service of cart; let i = index" (click)="onEditItem(i)">
+            {{service.productName}}
+            <hr>
+            <app-get-result-from-cloud [serviceId]="service.id" [productId]="service.productId"></app-get-result-from-cloud>
+            <br>
+          </li>
+        </ul>
+        <br>
+        <div>
+          <button class="btn btn-danger" matStepperPrevious>Back</button>
+          &nbsp;
+          <button class="btn btn-success" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+
+    <mat-step [stepControl]="fifthFormGroup">
+      <ng-template matStepLabel>Decrypt result</ng-template>
+      <p>You are now done.</p>
+      <form [formGroup]="fifthFormGroup">
+        <ng-template matStepLabel>Decrypt result</ng-template>
+        <hr>
+        <h2 style="color:darkcyan;">Decrypt result</h2>
+        <ul class="list-group list-group-numbered">
+          <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px;"
+            *ngFor="let service of cart; let i = index" (click)="onEditItem(i)">
+            {{service.productName}}
+            <hr>
+            
+            <app-decrypt-data [serviceId]="service.id" [productId]="service.productId"></app-decrypt-data>
+
+            <br>
+          </li>
+        </ul>
+        <br>
+        <div>
+          <button class="btn btn-danger" matStepperPrevious [disabled]="!(this.cart.length !== 0)">Back</button>
+          &nbsp;
+          <button class="btn btn-warning" (click)="stepper.reset()">Reset</button>
+        </div>
+      </form>
+
+    </mat-step>
+  </mat-stepper>
+
+</div>
+
+
+<br>

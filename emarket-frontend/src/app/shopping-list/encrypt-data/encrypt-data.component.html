@@ -1,0 +1,63 @@
+<!-- <p>Please fill these related information!</p> -->
+
+
+<!-- document.getElementById("date").innerHTML = m + "/" + d + "/" + y; -->
+
+<form (ngSubmit)="onSubmit(relatedInfoForm)" #relatedInfoForm="ngForm">
+    <ul class="list-group ">
+
+        <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px; border: none;"
+            *ngFor="let e of info; let i = index">
+
+            <!-- <div class="col-md-6" *ngIf="e.name!='Coefficient' && e.name!='Date Time' && e.name!='Request Id' && e.name!='Partner Id' && e.name!='Contract Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" placeholder="required" ngModel required>
+            </div> -->
+
+            <div class="col-md-6" *ngIf="e.name=='Value'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" placeholder="required" ngModel required>
+            </div>
+
+            <div class="col-md-6" *ngIf="e.name=='Partner Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" [(ngModel)]=partnerId required>
+            </div>
+
+            <div class="col-md-6" *ngIf="e.name=='Contract Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" [(ngModel)]=contractId required>
+            </div>
+
+            <div class="col-md-6" *ngIf="e.name=='Date Time' || e.name=='Request Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}"  [(ngModel)]=t required>
+            </div>
+
+            <div class="col-md-6" *ngIf="e.name=='Coefficient'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" [(ngModel)]=coefficient required>
+            </div>
+
+            
+
+            <!-- <div *ngIf="e.name!=null;then content else other_content"></div>
+            <ng-template #content>
+                
+            </ng-template>
+            <ng-template #other_content>
+                
+            </ng-template> -->
+
+        </li>
+    </ul>
+
+    <!-- <mat-label style="color:darkcyan;">Upload encrypted file:</mat-label> -->
+    <!-- &nbsp;&nbsp;&nbsp; <input type="file" class="file-upload" name="Upload your encrypted file" onchange="console.log(event.target.files)"> -->
+    <!-- <br> -->
+    <br>
+    &nbsp;&nbsp;&nbsp; <button class="btn btn-primary submit-button btn-sm" color="primary" type="submit"
+        [disabled]="!relatedInfoForm.valid">Encrypt</button>
+    <!-- &nbsp; -->
+</form>

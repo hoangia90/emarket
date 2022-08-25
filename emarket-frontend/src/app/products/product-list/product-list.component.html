@@ -1,0 +1,38 @@
+<div class="row">
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid justify-content-start">
+      <!-- <a class="navbar-brand" href="javascript:void(0)">CEA</a> -->
+      <a class="navbar-brand" href="javascript:void(0)" (click)="onClickCategory('')">CEA</a>
+
+      <button mat-button [matMenuTriggerFor]="softwareMenu" style="color: white;">Software</button>
+
+      <mat-menu #softwareMenu="matMenu">
+        <button mat-menu-item *ngFor="let cat of software, let i = index" (click)="onClickCategory(cat.name)">
+          {{cat.name}} </button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="hardwareMenu" style="color: white;">Hardware</button>
+
+      <mat-menu #hardwareMenu="matMenu">
+        <button mat-menu-item *ngFor="let cat of hardware, let i = index" (click)="onClickCategory(cat.name)">
+          {{cat.name}} </button>
+      </mat-menu>
+
+      <button mat-button style="color: white;" (click)="onNewProduct()">+ Product</button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <input class="form-control form-control-sm" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+        placeholder="Search.......">
+    </div>
+  </nav>
+
+  
+  <div class="col-lg-2" style="padding: 4px; padding-bottom: 20px;"
+    *ngFor="let productEl of products |filter:searchText; let i = index">
+    <app-product [product]="productEl" [index]="i">
+    </app-product>
+  </div>
+
+</div>

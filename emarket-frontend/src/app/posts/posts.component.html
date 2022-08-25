@@ -1,0 +1,11 @@
+<!-- <p>My blog works!</p> -->
+<!-- Blog -->
+<div class="row">
+    <div class="col-md-12">
+        <router-outlet></router-outlet>
+        <div *ngIf="currentRoute == '/blog'">
+            <app-post-list></app-post-list>
+        </div>
+    </div>
+</div>
+<!-- Blog - End -->>

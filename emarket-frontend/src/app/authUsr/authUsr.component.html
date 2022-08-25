@@ -1,0 +1,107 @@
+<!-- <div class="row">
+    <div class="col-xs-12">
+        <form>
+            <div class="form-group">
+                <label for="enail">E-Mail</label>
+                <input type="enail" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="enail">E-Mail</label>
+                <input type="enail" id="email" class="form-control">
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<!-- <div class="row">
+    <div class="col-xs-12 col-md-4 ">
+       
+        <div class="alert alert-danger" *ngIf="error">
+            {{error}}
+        </div>
+
+        <div class="alert alert-success" *ngIf="success">
+            {{success}}
+        </div>
+
+        <div class="form-group"> 
+            <label for="user">User</label>
+            <select 
+            id="user"
+            class="form-control"
+            ngModel
+            name="user"
+            (change)="onChange($event)"
+            >••••••••••••••="heverett">Heverett</option>
+                <option value="jubic">Jubic</option>
+            </select>
+        </div>
+
+        <br>
+
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+
+            <div class="form-group">
+                <label for="userName">User name</label>
+                <input 
+                    type="userName" 
+                    id="userName" 
+                    class="form-control"
+                    ngModel
+                    name="userName"
+                    required
+                    >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    class="form-control" 
+                    ngModel
+                    name="password" 
+                    required >
+            </div>
+
+            <br>
+            
+            <div>
+                <button class="btn btn-primary btn-sm" type="submit" [disabled]="!authForm.valid"> {{ isLoginMode ? 'Login' : 'Sign Up' }} </button> 
+                |
+                <button class="btn btn-primary btn-sm" (click)="onLogout()" type="button"> Logout </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<br> -->
+
+
+<!-- <div class="app-container" [ngClass]="{ 'bg-light': user }"> -->
+
+<!-- <app-alert></app-alert> -->
+
+<div *ngIf="user!=null;then content else other_content"></div>
+<ng-template #content>
+    <div class="container">
+        <h1>Hi {{user.firstName}}!</h1>
+        <p>You're logged in e-market platform!!</p>
+        <p><a routerLink="/users">Manage Users</a></p>
+        <!-- <p><a (click)="logout()">Logout</a></p> -->
+        <button class="btn btn-danger" (click)="logout()">
+            <!-- <span  class="spinner-border spinner-border-sm mr-1"></span> -->
+            Logout
+        </button>
+    </div>
+   
+</ng-template>
+<ng-template #other_content>
+    <app-login></app-login>
+</ng-template>
+
+<router-outlet></router-outlet>
+<!-- </div> -->
+<!-- <router-outlet></router-outlet> -->
+<!-- <app-alert></app-alert> -->

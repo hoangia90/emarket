@@ -1,0 +1,122 @@
+<!-- 1st version -->
+<!-- <a style="cursor: pointer;" class="list-group-item clearfix" (click)="onSelected()"> -->
+<!-- <div class="pull-left">
+        <h4 class="list-group-item-heading"> {{product.name}} </h4>
+        <p class="list-group-item-text"> {{product.description}} </p>
+    </div>
+    <span class="pull-right">
+        <img [src]="product.imagePath" alt="{{product.name}}" class="img-responsive" style="max-height: 50px;">
+    </span> -->
+
+<!-- <span class="pull-top">
+        <img [src]="product.imagePath" alt="{{product.name}}" class="img-responsive" style="max-height: 120px;">
+    </span>
+    <div class="pull-bottom">
+        <h4 class="list-group-item-heading"> {{product.name}} </h4>
+        <p class="list-group-item-text"> {{product.description}} </p>
+    </div> -->
+<!-- </a> -->
+
+
+<!-- 2nd version -->
+<!-- <div class="mat-card" style="width: 18rem;">
+
+    <div class="bestseller">
+        <img mat-card-image class="img-fluid" [src]="product.imagePath" alt="{{product.name}}" class="img-responsive">
+    </div>
+
+    <mat-card-title><h3>{{product.name}}</h3></mat-card-title>
+
+    <mat-card-content>
+        <p>{{product.description}}</p>
+    </mat-card-content>
+
+    <mat-card-footer>
+        <mat-progress-bar mode="buffer"></mat-progress-bar>
+    </mat-card-footer>
+
+    <a style="cursor: pointer;" class="mat-card-actions" [routerLink]="[index]" routerLinkActive="activebutton">
+        Purchase</a>
+
+</div> -->
+
+
+<!-- 3rd version -->
+<!-- <mat-card style="cursor: pointer;" fxLayout="column" fxFlex.md="0 1 calc(25% - 20px)" fxFlex="0 1 calc(20% - 20px)"
+    fxFlex.sm="0 1 calc(33% - 20px)" fxFlex.xs="100" class="product" [routerLink]="[index]"
+    routerLinkActive="activebutton">
+    <div class="bestseller">
+        <img mat-card-image [src]="product.imagePath" alt="photo">
+    </div>
+
+    <mat-card-title style="margin: 0px;">{{product.name | slice:0:21}}</mat-card-title>
+    <span style="text-align: right">
+        <mat-card-subtitle style="text-align: right; margin: 0px;">
+            {{product.price}} &euro;
+        </mat-card-subtitle>
+    </span>
+
+    <div class="ql-editor" style="padding: 0; padding-bottom: 0;" [innerHTML]="product.description | slice:0:88">
+    </div>
+
+    <mat-card-actions fxFlexAlign="end" align="end">
+
+        <button mat-icon-button>
+            <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="onEditProduct()">
+            <mat-icon>mode_edit</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="onDeleteProduct()">
+            <mat-icon>delete</mat-icon>
+        </button>
+
+    </mat-card-actions>
+
+</mat-card> -->
+
+
+<!-- 4rd version -->
+<!-- <mat-card style="cursor: pointer;" class="product" [routerLink]="[index]" routerLinkActive="activebutton"> -->
+<mat-card style="cursor: pointer;" class="product">
+    <!-- <div class="bestseller">
+        <img mat-card-image [src]="product.imagePath" alt="{{product.name}}" class="img-responsive" width="100"
+            height="100" style="float: left; margin-right: 10px;">
+    </div> -->
+
+    <img mat-card-image [src]="product.imagePath" alt="{{product.name}}" class="image" [routerLink]="[index]"
+        routerLinkActive="activebutton">
+
+    <mat-card-header [routerLink]="[index]" routerLinkActive="activebutton">
+        <!-- <img mat-card-image [src]="product.imagePath" alt="{{product.name}}" class="img-responsive"> -->
+        <!-- <img mat-card-avatar src="https://i.pinimg.com/736x/a8/29/ef/a829efec992eaf2d2b03c29e71de8ba3.jpg"> -->
+        <mat-card-title>{{product.name | slice:0:21}}</mat-card-title>
+        <mat-card-subtitle>{{product.price}} &euro;</mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- <mat-card-content>
+        <quill-view-html class="quill" [content]="product.description | slice:0:110" format="text" theme="snow">
+        </quill-view-html>
+    </mat-card-content> -->
+
+    <!-- <mat-divider inset></mat-divider> -->
+
+    <mat-card-actions align="end">
+
+        <button mat-icon-button (click)="onAddToShoppingCart()">
+            <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="onEditProduct()">
+            <mat-icon>mode_edit</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="onDeleteProduct()">
+            <mat-icon>delete</mat-icon>
+        </button>
+
+    </mat-card-actions>
+
+</mat-card>

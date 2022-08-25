@@ -1,0 +1,64 @@
+<!-- <p>get-result-from-cloud works!</p> -->
+<!-- <form (ngSubmit)="onSubmit(relatedInfoForm)" #relatedInfoForm="ngForm">
+    <ul class="list-group ">
+
+        <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px; border: none;">
+
+            <div class="col-md-6">
+                <mat-label style="color:darkcyan;">Partner Id:</mat-label>
+                <input class="form-control input-sm" name="partnerId" placeholder="required" ngModel required>
+                <br>
+                <mat-label style="color:darkcyan;">Contract Id:</mat-label>
+                <input class="form-control input-sm" name="contractId" placeholder="required" ngModel required>
+                <br>
+                <mat-label style="color:darkcyan;">Analysis Reference Id:</mat-label>
+                <input class="form-control input-sm" name="analysisReferenceId" placeholder="required" ngModel required>
+            </div>
+        </li>
+    </ul>
+
+    <br>
+    &nbsp;&nbsp;&nbsp; <button class="btn btn-primary submit-button btn-sm" color="primary" type="submit"
+        [disabled]="!relatedInfoForm.valid">Download</button>
+</form> -->
+
+<!-- <p>Please fill these related information!</p> -->
+<form (ngSubmit)="onSubmit(relatedInfoForm)" #relatedInfoForm="ngForm">
+    <ul class="list-group ">
+
+        <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px; border: none;"
+            *ngFor="let e of info; let i = index">
+
+            <!-- <div class="col-md-6" *ngIf="e.name!='Partner Id' && e.name!='Contract Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" placeholder="required" ngModel required>
+            </div> -->
+
+            <div class="col-md-6" *ngIf="e.name=='Partner Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" [(ngModel)]=partnerId required>
+            </div>
+
+            <div class="col-md-6" *ngIf="e.name=='Contract Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" [(ngModel)]=contractId required>
+            </div>
+
+            <div class="col-md-6" *ngIf="e.name=='Analysis Reference Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" [(ngModel)]=requestId required>
+            </div>
+
+        </li>
+    </ul>
+
+    <!-- <mat-label style="color:darkcyan;">Upload encrypted file:</mat-label> -->
+    <!-- &nbsp;&nbsp;&nbsp; <input type="file" class="file-upload" name="Upload your encrypted file" onchange="console.log(event.target.files)"> -->
+    <!-- <br> -->
+    <br>
+    &nbsp;&nbsp;&nbsp; <button class="btn btn-primary submit-button btn-sm" color="primary" type="submit"
+        [disabled]="!relatedInfoForm.valid">Download</button>
+    <!-- &nbsp; -->
+</form>

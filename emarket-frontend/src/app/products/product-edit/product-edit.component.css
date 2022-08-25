@@ -1,0 +1,96 @@
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+ border: 1px solid red;
+}
+
+label {
+    color: orangered;
+    font-size: medium;
+}
+
+h1 {
+    color: darkolivegreen; 
+    font-size: 40px;
+}
+
+#div_name {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_imagePath {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_gallery {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_productUrl {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_productDescription {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#editor-content-output {
+    /* background-color:#99FFFF; */
+    background-color:orange;
+    font-size: small;
+}
+
+quill-editor {
+    color: #000000;
+    overflow: visible;
+}
+
+#div_prices {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_quantity {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_rated {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_categories {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_tags {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_productDate {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#div_status {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 1%;
+}

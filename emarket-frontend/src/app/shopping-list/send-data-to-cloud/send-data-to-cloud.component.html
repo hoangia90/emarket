@@ -1,0 +1,108 @@
+<!-- <p>send-data-to-cloud works!</p> -->
+<!-- <form (ngSubmit)="onSubmit(relatedInfoForm)" #relatedInfoForm="ngForm">
+    <ul class="list-group ">
+        <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px; border: none;">
+            <div class="col-md-6">
+                <mat-label style="color:darkcyan;">Partner Id:</mat-label>
+                <input class="form-control input-sm" name="partnerId" placeholder="required" ngModel required>
+                <br>
+                <mat-label style="color:darkcyan;">Contract Id:</mat-label>
+                <input class="form-control input-sm" name="contractId" placeholder="required" ngModel required>
+                <br>
+                <mat-label style="color:darkcyan;">Category:</mat-label>
+                <input class="form-control input-sm" name="category" placeholder="required" ngModel required>
+                <br>
+                <mat-label style="color:darkcyan;">Title:</mat-label>
+                <input class="form-control input-sm" name="title" placeholder="required" ngModel required>
+                <br>
+                <mat-label style="color:darkcyan;">Description:</mat-label>
+                <input class="form-control input-sm" name="description" placeholder="required" ngModel required>
+                <br>
+                <mat-label style="color:darkcyan;">Encrypted File (JSON format):</mat-label>
+                <br>
+                <input type="file" class="file-input" name="file" (change)="onFileSelected($event)" #fileUpload>
+            </div>
+        </li>
+    </ul>
+    <br>
+    &nbsp;&nbsp;&nbsp; <button class="btn btn-primary submit-button btn-sm" color="primary" type="submit"
+        [disabled]="!relatedInfoForm.valid">
+        <mat-icon>attach_file</mat-icon> Send attached file
+    </button>
+    <br><br>
+    &nbsp;&nbsp;&nbsp; {{status}}
+    <br>
+    &nbsp;&nbsp;&nbsp; {{fileName || "No file uploaded yet."}}
+</form> -->
+
+<!-- <input class="form-control input-sm" name="file" placeholder="required" ngModel required> -->
+<!-- <input type="file" class="file-upload" onchange="console.log(event.target.files)" required> -->
+<!-- <input type="file" class="file-input" name="file" (change)="onFileSelected($event)" #fileUpload> -->
+
+<!-- <mat-label style="color:darkcyan;">Upload encrypted file:</mat-label> -->
+<!-- &nbsp;&nbsp;&nbsp; <input type="file" class="file-upload" name="Upload your encrypted file" onchange="console.log(event.target.files)"> -->
+<!-- <br> -->
+
+
+<form (ngSubmit)="onSubmit(relatedInfoForm)" #relatedInfoForm="ngForm">
+    <ul class="list-group ">
+
+        <li class="list-group-item  clearfix"
+            style="cursor: pointer; color: orangered; font-size: medium; padding-top: 15px; border: none;"
+            *ngFor="let e of info; let i = index">
+
+            <!-- <div class="col-md-6" *ngIf="e.name!='Data Reference Contract'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" placeholder="required" ngModel required>
+            </div> -->
+
+            <div class="col-md-6" *ngIf="e.name=='Partner Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" [(ngModel)]=partnerId required>
+            </div>
+
+            <div class="col-md-6" *ngIf="e.name=='Contract Id'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <input class="form-control input-sm" name="{{i}}" [(ngModel)]=contractId required>
+            </div>
+
+
+            <div class="col-md-6" *ngIf="e.name=='Data Reference Contract'">
+                <mat-label style="color:darkcyan;">{{e.name}}:</mat-label>
+                <!-- <input class="form-control input-sm" name="{{i}}" [(ngModel)]=coefficient required> -->
+                <!-- <select class="form-select" id="" name="{{i}}" [(ngModel)]="databases" (ngModelChange)="onDatabaseChanged($event)"> -->
+                 <!-- <select class="form-select" id="" name="{{i}}" [(ngModel)]="selectedDatabase" (ngModelChange)="onDatabaseChanged($event)"> -->
+                    <select class="form-select" id="" name="{{i}}" [(ngModel)]="selectedDatabase" (ngModelChange)="onDatabaseChanged($event)">
+                    <option [ngValue]="null" disabled>Choose your database</option>
+                    <option *ngFor="let database of databases; let i = index" [ngValue]="database.value">
+                        {{database.name}} (files)
+                    </option>
+    
+                </select>
+            </div>
+
+        </li>
+        <mat-label style="color:darkcyan;">Encrypted File (JSON format):</mat-label>
+        <br>
+        <!-- <input type="file" class="file-input" name="file" (change)="onFileSelected($event)" data-toggle="modal" data-target="#myModal" #fileUpload> !-->
+        <input type="file" class="file-input" name="file" (change)="onFileSelected($event)" #fileUpload>
+    </ul>
+
+    <!-- <mat-label style="color:darkcyan;">Upload encrypted file:</mat-label> -->
+    <!-- &nbsp;&nbsp;&nbsp; <input type="file" class="file-upload" name="Upload your encrypted file" onchange="console.log(event.target.files)"> -->
+    <!-- <br> -->
+    <br>
+    &nbsp;&nbsp;&nbsp; <button class="btn btn-primary submit-button btn-sm" color="primary" type="submit"
+        [disabled]="!relatedInfoForm.valid">Send</button>
+    <!-- &nbsp; -->
+    <br>
+    &nbsp;&nbsp;
+    <div class="form-floating">
+        <textarea class="form-control" id="comment" name="text" placeholder={{status}}
+            disabled=true>{{value}}</textarea>
+        <label for="comment">Result</label>
+    </div>
+    <br>
+    <!-- {{value}} -->
+</form>

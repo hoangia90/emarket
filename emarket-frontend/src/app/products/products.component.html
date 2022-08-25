@@ -1,0 +1,33 @@
+<div class="row">
+
+    <!-- <div class="col-md-7"> -->
+    <div class="col-md-12">
+        <!-- <app-product-detail *ngIf="selectedProduct; else infoText" [product]="selectedProduct"> -->
+
+        <!-- <app-product-detail *ngIf="selectedProduct; else infoText" [product]="selectedProduct" [id]="selectedIndex"> -->
+        <!-- <app-product-detail *ngIf="selectedProduct; else infoText" [product]="selectedProduct" [id]="selectedIndex"> -->
+            <!-- <app-product-detail *ngIf="selectedProduct; else infoText" [product]="selectedProduct">
+        </app-product-detail>
+        <ng-template #infoText>
+            <p>
+                Please select an item!
+            </p>
+        </ng-template> -->
+
+        <router-outlet></router-outlet>
+
+        <!-- <div class="row" *ngIf="selectedProduct">
+            <div class="col-xs-12">
+                <button class="btn btn-success" type="submit">Add</button>
+                <button class="btn btn-danger" type="submit">Delete</button>
+                <button class="btn btn-primary" type="submit" (click)="onBackBtn()">Back</button>
+            </div>
+        </div> -->
+
+    </div>
+
+    <!-- <div class="col-md-5"> -->
+    <app-product-list *ngIf="currentRoute == '/products'"></app-product-list>
+    <!-- <app-product-list></app-product-list> -->
+    <!-- </div> -->
+</div>

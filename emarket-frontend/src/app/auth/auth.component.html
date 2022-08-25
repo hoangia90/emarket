@@ -1,0 +1,91 @@
+<!-- <div class="row">
+    <div class="col-xs-12">
+        <form>
+            <div class="form-group">
+                <label for="enail">E-Mail</label>
+                <input type="enail" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="enail">E-Mail</label>
+                <input type="enail" id="email" class="form-control">
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<div class="row">
+    <div class="col-xs-12 col-md-4 ">
+
+        <div class="alert alert-danger" *ngIf="error">
+            {{error}}
+        </div>
+
+        <div class="alert alert-success" *ngIf="success">
+            {{success}}
+        </div>
+
+        <div class="form-group">
+            <label for="server">Server</label>
+
+            <!-- <select 
+            id="server"
+            class="form-control"
+            ngModel
+            name="server"
+            (change)="onChange($event)"
+            >
+                <option value="cea" >CEA</option>
+                <option value="gateway" >Gateway</option>
+                <option value="heverett">Heverett</option>
+                <option value="jubic">Jubic</option>
+            </select> -->
+
+            <select class="form-select" id="server" name="" [(ngModel)]="selectedServer"
+                (ngModelChange)="onServerChanged($event)">
+
+                <option [ngValue]="null" disabled>Choose your server</option>
+                <option *ngFor="let server of servers; let i = index" [ngValue]="server" [selected]="">
+                    {{server.name}}
+                    <!-- [ ID: {{server.authUrl}} ] -->
+                </option>
+
+            </select>
+
+        </div>
+
+        <br>
+
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+
+            <div class="form-group">
+                <label for="authUrl">Authentication URL</label>
+                <input type="authUrl" id="authUrl" class="form-control" ngModel name="authUrl" required>
+            </div>
+
+            <div class="form-group">
+                <label for="userName">User name</label>
+                <input type="userName" id="userName" class="form-control" ngModel name="userName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" ngModel name="password"
+                    value="selectedServer.password" required>
+            </div>
+
+            <br>
+
+            <div>
+                <button class="btn btn-primary btn-sm" type="submit"> Sign In </button>
+                <!-- | -->
+                <!-- <button class="btn btn-primary"> Switch to Login </button> -->
+            </div>
+
+        </form>
+
+        <br>
+
+    </div>
+</div>
+
+<br>

@@ -1,0 +1,43 @@
+{
+    "/api1/*": {
+        "target": {
+            "host": "localhost",
+            "protocol": "http:",
+            "port": 9292
+         },
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api1": ""
+        }
+    },
+
+    "/api2/*": {
+        "target": {
+            "host": "api.bigpi.eu",
+            "protocol": "https:",
+            "port": 8443
+         },
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api2": ""
+        }
+    },
+
+    "/api3/*": {
+        "target": {
+            "host": "heverett.bigpi.eu",
+            "protocol": "https:",
+            "port": 8443
+         },
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api3": ""
+        }
+    }
+}
